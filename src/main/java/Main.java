@@ -6,7 +6,7 @@ public class Main {
                 String s2 = "-5023345";
                 String s3 = "+0";
                 String s4 = "-00458";
-                String s5 = "+9035";
+                String s5 = "-1";
                 System.out.println(NumberFormatter.parseInt(s1));
                 System.out.println(NumberFormatter.parseInt(s2));
                 System.out.println(NumberFormatter.parseInt(s3));

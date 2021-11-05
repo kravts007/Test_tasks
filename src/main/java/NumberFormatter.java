@@ -39,10 +39,10 @@ public class NumberFormatter {
                 char ch = string.charAt(i);
                 if (!(firstChar == 43 || firstChar == 45)) {     // Check condition: If String starts from correct character ['+', '-']
                     if (firstChar < 48 || firstChar > 57) {     // or [0-9]
-                        throw new NumberFormatException("Input string has incorrect values. They are not from ['+', '-'] or [0-9]");
+                        throw new NumberFormatException("Input string start has incorrect values. String must starts with ['+', '-'] or [0-9]");
                     }
                 } else if (ch < 48 || ch > 57) {    // Check condition: If String starts from correct character ['+', '-']
-                    throw new NumberFormatException("Input string has incorrect values. They are not from [0-9]");
+                    throw new NumberFormatException("Input string has incorrect values. String must contain only characters from [0-9]");
                 }
             }
         }
