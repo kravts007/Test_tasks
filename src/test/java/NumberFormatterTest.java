@@ -5,7 +5,7 @@ public class NumberFormatterTest {
     String string1 = "+0";
     String string2 = "+12345";
     String string3 = "-54321";
-    String string4 = "-06321";
+    String string4 = "-006321";
     String string5 = "+852469";
 
 
