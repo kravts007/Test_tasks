@@ -20,7 +20,7 @@ public class NumberFormatterTest {
         Assertions.assertEquals(result2, NumberFormatter.parseInt(string2));
         Assertions.assertEquals(result3, NumberFormatter.parseInt(string3));
         Assertions.assertEquals(result4, NumberFormatter.parseInt(string4));
-        Assertions.assertEquals(result4, NumberFormatter.parseInt(string4));
+        Assertions.assertEquals(result5, NumberFormatter.parseInt(string5));
 
     }
 }
