@@ -11,6 +11,7 @@ public class FizzBuzzDetectorTest {
         String result1 = "Mary had Fizz little Buzz Fizz lamb, little Fizz Buzz had Fizz little lamb";
         int counter = 6;
         FizzBuzzObject object = new FizzBuzzObject(new StringBuilder(result1), 6);
-        Assertions.assertEquals(object, FizzBuzzDetector.getOverlappings(string1));
+      Assertions.assertEquals(object,FizzBuzzDetector.getOverlappings(string1));
+
     }
 }

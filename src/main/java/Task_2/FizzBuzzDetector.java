@@ -23,9 +23,10 @@ public class FizzBuzzDetector {
                 builder.append("Buzz").append(" ");
                 counter++;
 
-            } else {
+            } else if(i == words.length - 1) {
+                builder.append((words[i]));
+            }else {
                 builder.append(words[i]).append(" ");  // Add words to new stringBuilder
-
             }
         }
         return new FizzBuzzObject(builder, counter);
