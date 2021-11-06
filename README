@@ -10,7 +10,7 @@ String should contain positive and negative numeric values in stringified format
 Decimal values are not applicable in this task
 
 Functional Description:
-Application should utilize class NumberFormatter and method parseInt that has input param string and returns integer value.
+Application should utilize class Task_1.NumberFormatter and method parseInt that has input param string and returns integer value.
 It is not allowed to use built-in programming utilities or third-party libraries provided by a specific programming language for a string to integer conversion logic.
 
 Testing Notes

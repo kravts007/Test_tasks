@@ -1,12 +1,14 @@
+package Task_1;
+
 import java.util.Scanner;
 
 public class Main {
         public static void main(String[] args) {
                 String s1 = "123345";
-                String s2 = "-5023345";
-                String s3 = "+0";
+                String s2 = "54321";
+                String s3 = "1234";
                 String s4 = "-00458";
-                String s5 = "-1";
+                String s5 = "-00";
                 System.out.println(NumberFormatter.parseInt(s1));
                 System.out.println(NumberFormatter.parseInt(s2));
                 System.out.println(NumberFormatter.parseInt(s3));
