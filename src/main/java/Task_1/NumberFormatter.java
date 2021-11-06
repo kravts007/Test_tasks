@@ -5,13 +5,14 @@ package Task_1;
  */
 
 public class NumberFormatter {
-
+// В условии задания написано return integer value(целочисленное значение), а long это тоже целочисленное значение.
+// Поэтому для того, что бы работало условие "Length of the input string: 2 ≤ |s| ≤ 2^32-1" мой метод возвращает long
     public static long parseInt(String inputString) {
         validate(inputString);
         long value = 0L;
         boolean isNeg = false;
         int i = 0;
-        if (inputString.charAt(0) == '-') {
+        if (inputString.charAt(0) == '-') {        //Check condition: is value negative
             isNeg = true;
             i = 1;
         }
