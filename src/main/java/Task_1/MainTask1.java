@@ -2,7 +2,7 @@ package Task_1;
 
 import java.util.Scanner;
 
-public class Main {
+public class MainTask1 {
         public static void main(String[] args) {
                 String s1 = "123345";
                 String s2 = "54321";
