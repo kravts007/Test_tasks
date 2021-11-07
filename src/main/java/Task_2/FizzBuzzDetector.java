@@ -6,30 +6,59 @@ package Task_2;
 public class FizzBuzzDetector {
     public static Object getOverlappings(String string) {
         validateString(string);
-        String[] words = string.split(" ");
-        StringBuilder builder = new StringBuilder();
+        String[] words = string.split(" ");     //Split the string into an array
+        StringBuilder builder = new StringBuilder();    //Create new StringBuilder which will contains our new string with Fizz and Buzz
         int counter = 0;
+        boolean endOfTheLine;
+        boolean startOfNewLine;
         for (int i = 0; i < words.length; i++) {
-            int firstWord = i + 1;
-            if (((firstWord % 3) == 0) && ((firstWord % 5) == 0)) {   // Is it a multiple of 3 and 5?
-                builder.append("FizzBuzz").append(" ");
+            int wordAtPosition = i + 1; // We start reading from the first word, but first index of array is 0, so we are shifting the countdown
+            endOfTheLine = (i == words.length - 1);
+            startOfNewLine = words[i].contains("\n");
+
+            if (((wordAtPosition % 3) == 0) && ((wordAtPosition % 5) == 0)) {   // Is it a multiple of 3 and 5?
+                if (startOfNewLine) {      // If this is a new line we add "\n" before word
+                    builder.append("\n");
+                }
+                if (endOfTheLine) {    //If this is the end of the line we do not add a space
+                    builder.append("FizzBuzz");
+                } else {
+                    builder.append("FizzBuzz").append(" ");     //If this is not the end of the line we add a space after word
+                }
                 counter++;
 
-            } else if ((firstWord % 3) == 0) {  // Is it a multiple of 3?
-                builder.append("Fizz").append(" ");
+            } else if ((wordAtPosition % 3) == 0) {  // Is it a multiple of 3?
+                if (startOfNewLine) {  // If this is a new line we add "\n" before word
+                    builder.append("\n");
+                }
+                if (endOfTheLine) {    //If this is the end of the line we do not add a space
+                    builder.append("Fizz");
+                } else {
+                    builder.append("Fizz").append(" ");  //If this is not the end of the line we add a space after word
+                }
                 counter++;
 
-            } else if ((firstWord % 5) == 0) {   // Is it a multiple of 5?
-                builder.append("Buzz").append(" ");
+            } else if ((wordAtPosition % 5) == 0) {   // Is it a multiple of 5?
+                if (startOfNewLine) {   // If this is a new line we add "\n" before word
+                    builder.append("\n");
+                }
+                if (endOfTheLine) {    //If this is the end of the line we do not add a space
+                    builder.append("Buzz");
+                } else {
+                    builder.append("Buzz").append(" ");  //If this is not the end of the line we add a space after word
+                }
                 counter++;
-
-            } else if(i == words.length - 1) {
-                builder.append((words[i]));
-            }else {
-                builder.append(words[i]).append(" ");  // Add words to new stringBuilder
+            } else {
+                if (endOfTheLine) {  //If this is the end of the line we do not add a space
+                    builder.append(words[i]);
+                } else {
+                    builder.append(words[i]).append(" ");    //If this is not the end of the line we add a space after word
+                }
             }
+
         }
-        return new FizzBuzzObject(builder, counter);
+        String outputString = builder.toString();
+        return new FizzBuzzObject(outputString, counter);
     }
 
     /**
@@ -48,6 +77,9 @@ public class FizzBuzzDetector {
         }
         if (string.length() <= 7 || string.length() >= 100) {   //Check condition: if length of the input string: 7 ≤ |s| ≤ 100
             throw new NumberFormatException("Incorrect length of the input String! Length of the input string must be 7 ≤ |s| ≤ 100");
+        }
+        if (!(string.matches("^[?!,.:;'—а-яА-ЯёЁ0-9a-zA-Z\\s]+$"))) {
+            throw new NumberFormatException("Incorrect input string! The string contains forbidden characters");
         }
     }
 }
