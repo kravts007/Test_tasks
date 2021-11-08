@@ -70,16 +70,16 @@ public class FizzBuzzDetector {
             string.equalsIgnoreCase(null);  //Check condition: if input string is NULL
         } catch (NullPointerException npe) {
             isNull = true;
-            throw new NumberFormatException("The input String is NULL");
+            throw new IllegalArgumentException("The input String is NULL");
         }
         if (string.isEmpty()) {     //Check condition: if input string is Empty
-            throw new NumberFormatException("The input String is Empty");
+            throw new IllegalArgumentException("The input String is Empty");
         }
         if (string.length() <= 7 || string.length() >= 100) {   //Check condition: if length of the input string: 7 ≤ |s| ≤ 100
-            throw new NumberFormatException("Incorrect length of the input String! Length of the input string must be 7 ≤ |s| ≤ 100");
+            throw new IllegalArgumentException("Incorrect length of the input String! Length of the input string must be 7 ≤ |s| ≤ 100");
         }
         if (!(string.matches("^[?!,.:;'—а-яА-ЯёЁ0-9a-zA-Z\\s]+$"))) {
-            throw new NumberFormatException("Incorrect input string! The string contains forbidden characters");
+            throw new IllegalArgumentException("Incorrect input string! The string contains forbidden characters");
         }
     }
 }

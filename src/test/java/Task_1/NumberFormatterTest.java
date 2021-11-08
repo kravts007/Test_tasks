@@ -74,5 +74,4 @@ public class NumberFormatterTest {
         long result8 = 4294967295L;
         Assertions.assertEquals(result8, NumberFormatter.parseInt(string8));
     }
-
 }
