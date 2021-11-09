@@ -1,4 +1,5 @@
 package Task_2;
+import Task_1.NumberFormatter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -91,6 +92,61 @@ public class FizzBuzzDetectorTest {
         String result = "1 564 Fizz has Buzz Fizz 54 lamb \nFizz Buzz 87 Fizz цк , FizzBuzz ? \nожидаемо Fizz be Buzz Fizz 100 percent";
         FizzBuzzObject expectedObject = new FizzBuzzObject(result, 10);
         Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
+    }
+    @Test
+    public void testParseInt11() throws IllegalArgumentException {
+        //actual result
+        String string = null;
+        //expected result
+        String result = "0";
+        Throwable thrown = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            FizzBuzzDetector.getOverlappings(string);
+        });
+        Assertions.assertNotNull(thrown.getMessage());
+    }
+    @Test
+    public void testParseInt12() throws IllegalArgumentException {
+        //actual result
+        String string = "";
+        //expected result
+        String result = "0";
+        Throwable thrown = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            FizzBuzzDetector.getOverlappings(string);
+        });
+        Assertions.assertNotNull(thrown.getMessage());
+    }
+    @Test
+    public void testParseInt13() throws IllegalArgumentException {
+        //actual result
+        String string = "abc";
+        //expected result
+        String result = "abc";
+        Throwable thrown = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            FizzBuzzDetector.getOverlappings(string);
+        });
+        Assertions.assertNotNull(thrown.getMessage());
+    }
+    @Test
+    public void testParseInt14() throws IllegalArgumentException {
+        //actual result
+        String string = "abcfsdfsfsdfsfsdfsdfsdfsdfsdfsdfjhsidlfhsdufhsdufhsdufhsdafuhsdfuhsdfuhsdufhsdfuihsdfuihsdfuhsdufhsdufhsdfu";
+        //expected result
+        String result = "abcfsdfsfsdfsfsdfsdfsdfsdfsdfsdfjhsidlfhsdufhsdufhsdufhsdafuhsdfuhsdfuhsdufhsdfuihsdfuihsdfuhsdufhsdufhsdfu";
+        Throwable thrown = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            FizzBuzzDetector.getOverlappings(string);
+        });
+        Assertions.assertNotNull(thrown.getMessage());
+    }
+    @Test
+    public void testParseInt15() throws IllegalArgumentException {
+        //actual result
+        String string = "abd // fsdifi 954 dsadasd + fdsif # fsdfjisdf";
+        //expected result
+        String result = "abd // Fizz 954 Buzz Fizz fdsif # Fizz";
+        Throwable thrown = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            FizzBuzzDetector.getOverlappings(string);
+        });
+        Assertions.assertNotNull(thrown.getMessage());
     }
 
 }
