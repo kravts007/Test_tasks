@@ -82,4 +82,15 @@ public class FizzBuzzDetectorTest {
         FizzBuzzObject expectedObject = new FizzBuzzObject(result, 13);
         Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
     }
+
+    @Test
+    public void getOverlappingsTest9() {
+        //actual result
+        String string = "1 564 Mary has 5775 little 54 lamb \n8492 тест 87 . цк , ! ? \nожидаемо will be всё ok 100 percent";
+        //expected result
+        String result = "1 564 Fizz has Buzz Fizz 54 lamb \nFizz Buzz 87 Fizz цк , FizzBuzz ? \nожидаемо Fizz be Buzz Fizz 100 percent";
+        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 10);
+        Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
+    }
+
 }
