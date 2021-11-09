@@ -1,5 +1,5 @@
 package Task_2;
-import Task_1.NumberFormatter;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -148,5 +148,4 @@ public class FizzBuzzDetectorTest {
         });
         Assertions.assertNotNull(thrown.getMessage());
     }
-
 }
