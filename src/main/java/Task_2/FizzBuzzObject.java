@@ -10,13 +10,11 @@ public class FizzBuzzObject {
         this.string = string;
         this.count = count;
     }
-
     @Override
     public String toString() {
         return "output string: \n" + string + "\n" +
                 "\ncount: " + count;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -24,7 +22,6 @@ public class FizzBuzzObject {
         FizzBuzzObject object = (FizzBuzzObject) o;
         return count == object.count && Objects.equals(string, object.string);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(string, count);

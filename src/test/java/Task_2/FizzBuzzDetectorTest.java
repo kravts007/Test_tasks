@@ -16,10 +16,10 @@ public class FizzBuzzDetectorTest {
     @Test
     public void getOverlappingsTest2() {
         //actual result
-        String string = "Mary";
+        String string = "Mary had a little lamb";
         //expected result
-        String result = "Mary";
-        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 0);
+        String result = "Mary had Fizz little Buzz";
+        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 2);
         Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
     }
 
@@ -36,40 +36,40 @@ public class FizzBuzzDetectorTest {
     @Test
     public void getOverlappingsTest4() {
         //actual result
-        String string = "Mary had a little lamb \nLittle lamb, little lamb \nMary had a little lamb \nIt's fleece was white as snow";
+        String string = "Mary had a little lamb \nLittle lamb, little lamb \nMary had a little lamb";
         //expected result
-        String result = "Mary had Fizz little Buzz \nFizz lamb, little Fizz \nBuzz had Fizz little lamb \nFizzBuzz fleece was Fizz as Buzz";
-        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 9);
+        String result = "Mary had Fizz little Buzz \nFizz lamb, little Fizz \nBuzz had Fizz little lamb";
+        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 6);
         Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
     }
 
     @Test
     public void getOverlappingsTest5() {
         //actual result
-        String string = "У лукоморья дуб зелёный; \nЗлатая цепь на дубе том: \nИ днём и ночью кот учёный \nВсё ходит по цепи кругом;";
+        String string = "У лукоморья дуб зелёный; \nЗлатая цепь на дубе том: \nИ днём и ночью кот учёный";
         //expected result
-        String result = "У лукоморья Fizz зелёный; \nBuzz Fizz на дубе Fizz \nBuzz днём Fizz ночью кот FizzBuzz \nВсё ходит Fizz цепи Buzz";
-        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 9);
+        String result = "У лукоморья Fizz зелёный; \nBuzz Fizz на дубе Fizz \nBuzz днём Fizz ночью кот FizzBuzz";
+        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 7);
         Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
     }
 
     @Test
     public void getOverlappingsTest6() {
         //actual result
-        String string = "Идёт направо — песнь заводит, \nНалево — сказку говорит.";
+        String string = "Всё ходит по цепи кругом; \nИдёт направо — песнь заводит, \nНалево — сказку говорит.";
         //expected result
-        String result = "Идёт направо Fizz песнь Buzz \nFizz — сказку Fizz";
-        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 4);
+        String result = "Всё ходит Fizz цепи Buzz \nFizz направо — Fizz Buzz \nНалево Fizz сказку говорит.";
+        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 6);
         Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
     }
 
     @Test
     public void getOverlappingsTest7() {
         //actual result
-        String string = "No sunshine, lots of rain, \nNo warm days, snow again! \nNo bugs or bees \nNo leaves on trees. \nYou must remember \nThis is November!;";
+        String string = "No sunshine, lots of rain, \nNo warm days, snow again! \nNo bugs or bees \nNo leaves on trees.";
         //expected result
-        String result = "No sunshine, Fizz of Buzz  \nFizz warm days, Fizz Buzz \nNo Fizz or bees \nFizzBuzz leaves on Fizz \nYou Buzz Fizz \nThis is Fizz";
-        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 11);
+        String result = "No sunshine, Fizz of Buzz \nFizz warm days, Fizz Buzz \nNo Fizz or bees \nFizzBuzz leaves on Fizz";
+        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 8);
         Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
     }
 
@@ -82,25 +82,4 @@ public class FizzBuzzDetectorTest {
         FizzBuzzObject expectedObject = new FizzBuzzObject(result, 13);
         Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
     }
-
-    @Test
-    public void getOverlappingsTest9() {
-        //actual result
-        String string = null;
-        //expected result
-        String result = "0";
-        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 0);
-        Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
-    }
-
-    @Test
-    public void getOverlappingsTest10() {
-        //actual result
-        String string = "Идёт направо —> песнь| заводит, \nНалево — сказку говорит.";
-        //expected result
-        String result = "Идёт направо Fizz песнь Buzz \nFizz — сказку Fizz";
-        FizzBuzzObject expectedObject = new FizzBuzzObject(result, 0);
-        Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
-    }
-
 }
