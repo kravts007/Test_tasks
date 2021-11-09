@@ -1,5 +1,4 @@
 package Task_2;
-
 /**
  * Write an algorithm that replaces every third word in the string to Fizz, and every fifth word in the string to Buzz.
  */
