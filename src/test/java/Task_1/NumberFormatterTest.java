@@ -66,6 +66,7 @@ public class NumberFormatterTest {
         int result7 = 1;
         Assertions.assertEquals(result7, NumberFormatter.parseInt(string7));
     }
+
     @Test
     public void testParseInt8() {
         //actual result
@@ -73,5 +74,41 @@ public class NumberFormatterTest {
         //expected result
         int result8 = 2147483647;
         Assertions.assertEquals(result8, NumberFormatter.parseInt(string8));
+    }
+
+    @Test
+    public void testParseInt9() throws NumberFormatException {
+        //actual result
+        String string = "";
+        //expected result
+        int result = 0;
+        Throwable thrown = Assertions.assertThrows(NumberFormatException.class, () -> {
+            NumberFormatter.parseInt(string);
+        });
+        Assertions.assertNotNull(thrown.getMessage());
+    }
+
+    @Test
+    public void testParseInt10() throws NumberFormatException {
+        //actual result
+        String string = "abc";
+        //expected result
+        int result = 123;
+        Throwable thrown = Assertions.assertThrows(NumberFormatException.class, () -> {
+            NumberFormatter.parseInt(string);
+        });
+        Assertions.assertNotNull(thrown.getMessage());
+    }
+
+    @Test
+    public void testParseInt11() throws NumberFormatException {
+        //actual result
+        String string = "/56565";
+        //expected result
+        int result = 56565;
+        Throwable thrown = Assertions.assertThrows(NumberFormatException.class, () -> {
+            NumberFormatter.parseInt(string);
+        });
+        Assertions.assertNotNull(thrown.getMessage());
     }
 }
