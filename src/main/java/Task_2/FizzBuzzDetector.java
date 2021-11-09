@@ -15,17 +15,17 @@ public class FizzBuzzDetector {
             int wordAtPosition = i + 1; // We start reading from the first word, but first index of array is 0, so we are shifting the countdown
             endOfTheLine = (i == words.length - 1);
             startOfNewLine = words[i].contains("\n");
-            if (((wordAtPosition % 3) == 0) && ((wordAtPosition % 5) == 0)) {   // Is it a multiple of 3 and 5?
-                if (startOfNewLine) {      // If this is a new line we add "\n" before word
+            if (((wordAtPosition % 3) == 0) && ((wordAtPosition % 5) == 0)) {   // Is it a multiple of 3 and 5? Replace the word with FizzBuzz
+                if (startOfNewLine) {  // If this is a new line we add "\n" before the word
                     builder.append("\n");
                 }
                 if (endOfTheLine) {
                     builder.append("FizzBuzz");
                 } else {
-                    builder.append("FizzBuzz").append(" ");     //If this is not the end of the line we add a space after word
+                    builder.append("FizzBuzz").append(" ");
                 }
                 counter++;
-            } else if ((wordAtPosition % 3) == 0) {  // Is it a multiple of 3?
+            } else if ((wordAtPosition % 3) == 0) {  // Is it a multiple of 3? Replace the word with Fizz
                 if (startOfNewLine) {
                     builder.append("\n");
                 }
@@ -35,7 +35,7 @@ public class FizzBuzzDetector {
                     builder.append("Fizz").append(" ");
                 }
                 counter++;
-            } else if ((wordAtPosition % 5) == 0) {   // Is it a multiple of 5?
+            } else if ((wordAtPosition % 5) == 0) {   // Is it a multiple of 5? Replace the word with Buzz
                 if (startOfNewLine) {
                     builder.append("\n");
                 }
@@ -56,7 +56,6 @@ public class FizzBuzzDetector {
         String outputString = builder.toString(); // Write the StringBuilder value to the new string
         return new FizzBuzzObject(outputString, counter);
     }
-
     /**
      * Validate if the input string is not correct
      */
@@ -64,13 +63,13 @@ public class FizzBuzzDetector {
         if (inputString == null) {
             throw new IllegalArgumentException("String is NULL");
         }
-        if (inputString.isEmpty()) {     //Check condition: if input string is Empty
+        if (inputString.isEmpty()) {
             throw new IllegalArgumentException("The input String is Empty");
         }
         if (inputString.length() <= 7 || inputString.length() >= 100) {   //Check condition: if length of the input string: 7 ≤ |s| ≤ 100
             throw new IllegalArgumentException("Incorrect length of the input String! Length of the input string must be 7 ≤ |s| ≤ 100");
         }
-        if (!(inputString.matches("^[?!,.:;'—а-яА-ЯёЁ0-9a-zA-Z\\s]+$"))) {
+        if (!(inputString.matches("^[?!,.:;'—а-яА-ЯёЁ0-9a-zA-Z\\s]+$"))) {  //Check condition: if string contains only alphanumeric words and symbols[?!,.:;'—]
             throw new IllegalArgumentException("Incorrect input string! The string contains forbidden characters");
         }
     }
