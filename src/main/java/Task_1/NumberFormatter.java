@@ -1,9 +1,7 @@
 package Task_1;
-
 /**
  * Implement logic that translates stringified integer value into numeric format.
  */
-
 public class NumberFormatter {
     public static int parseInt(String inputString) {
         validateString(inputString);
@@ -27,7 +25,6 @@ public class NumberFormatter {
         }
         return value;
     }
-
     /**
      * Validate if the input string is not correct
      */
