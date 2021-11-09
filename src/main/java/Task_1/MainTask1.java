@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MainTask1 {
         public static void main(String[] args) {
-                String s1 = "123345";
+                String s1 = "2147483647";
                 String s2 = "54321";
                 String s3 = "1234";
                 String s4 = "-00458";

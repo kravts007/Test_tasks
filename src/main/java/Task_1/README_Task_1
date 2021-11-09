@@ -5,7 +5,7 @@ Sample: “123345” -> 123345, “-123345” -> -123345, “+1” -> 1
 
 Constraints:
 empty string is not applicable
-Length of the input string: 2 ≤ |s| ≤ 2^32-1
+Length of the input string: 2 ≤ |s| ≤ 2^31-1
 String should contain positive and negative numeric values in stringified format from the range [0-9] and arithmetical operation signs [‘+’, ‘-’] before numeric value
 Decimal values are not applicable in this task
 

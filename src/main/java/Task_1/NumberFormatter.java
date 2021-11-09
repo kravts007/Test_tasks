@@ -5,11 +5,9 @@ package Task_1;
  */
 
 public class NumberFormatter {
-// В условии задания написано return integer value(целочисленное значение), а long это тоже целочисленное значение.
-// Поэтому для того, что бы работало условие "Length of the input string: 2 ≤ |s| ≤ 2^32-1" мой метод возвращает long
-    public static long parseInt(String inputString) {
+    public static int parseInt(String inputString) {
         validateString(inputString);
-        long value = 0L;
+        int value = 0;
         boolean isNeg = false;
         int i = 0;
         if (inputString.charAt(0) == '-') {        //Check condition: is value negative
@@ -34,12 +32,11 @@ public class NumberFormatter {
      * Validate if the input string is not correct
      */
     private static void validateString(String string) {
-        int firstSymbol = string.charAt(0);
-        long topBoarderOfStringLength = (long) (Math.pow(2, 32) - 1);
-
-        if (string.isEmpty()) {     // Check condition: If String is empty
+        int topBoarderOfStringLength = (int) (Math.pow(2, 31) - 1);
+        if (string.isEmpty()) {
             throw new NumberFormatException("String is empty!");
         }
+        int firstSymbol = string.charAt(0);
         if (string.length() < 2 || string.length() > topBoarderOfStringLength) {   // Check condition: Length of the input string: 2 ≤ |s| ≤ 2^32 - 1
             throw new NumberFormatException("Input string length must be: 2 ≤ |s| ≤ 2^32 - 1");
         } else if (!(string.matches("(-|\\+)?\\d+"))) {    // Check condition: If String contains only [0-9] and ['+', '-']

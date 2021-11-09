@@ -16,16 +16,16 @@ public class NumberFormatterTest {
     @Test
     public void testParseInt2() {
         //actual result
-        String string2 = "-1-2-3-4-5";
+        String string2 = "-12345";
         //expected result
-        int result2 = 12345;
+        int result2 = -12345;
         Assertions.assertEquals(result2, NumberFormatter.parseInt(string2));
     }
 
     @Test
     public void testParseInt3() {
         //actual result
-        String string3 = "-54f321";
+        String string3 = "-54321";
         //expected result
         int result3 = -54321;
         Assertions.assertEquals(result3, NumberFormatter.parseInt(string3));
@@ -34,9 +34,9 @@ public class NumberFormatterTest {
     @Test
     public void testParseInt4() {
         //actual result
-        String string4 = "-6321";
+        String string4 = "+6321";
         //expected result
-        int result4 = -6321;
+        int result4 = 6321;
         Assertions.assertEquals(result4, NumberFormatter.parseInt(string4));
     }
 
@@ -52,26 +52,26 @@ public class NumberFormatterTest {
     @Test
     public void testParseInt6() {
         //actual result
-        String string6 = "";
+        String string6 = "-45";
         //expected result
-        int result6 = 0;
+        int result6 = -45;
         Assertions.assertEquals(result6, NumberFormatter.parseInt(string6));
     }
 
     @Test
     public void testParseInt7() {
         //actual result
-        String string7 = "   5";
+        String string7 = "+1";
         //expected result
-        int result7 = 5;
+        int result7 = 1;
         Assertions.assertEquals(result7, NumberFormatter.parseInt(string7));
     }
     @Test
     public void testParseInt8() {
         //actual result
-        String string8 = "4294967295";
+        String string8 = "2147483647";
         //expected result
-        long result8 = 4294967295L;
+        int result8 = 2147483647;
         Assertions.assertEquals(result8, NumberFormatter.parseInt(string8));
     }
 }
