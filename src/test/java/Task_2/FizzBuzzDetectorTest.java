@@ -77,9 +77,9 @@ public class FizzBuzzDetectorTest {
     @Test
     public void getOverlappingsTest8() {
         //actual result
-        String string = "M a r y h a d a l i t t l e l a m b L i t t l e l a m b";
+        String string = "M a r y h a d a l i t t l e l a m b L i t t l e l a m b !";
         //expected result
-        String result = "M a Fizz y Buzz Fizz d a Fizz Buzz t Fizz l e FizzBuzz a m Fizz L Buzz Fizz t l Fizz Buzz a Fizz b";
+        String result = "M a Fizz y Buzz Fizz d a Fizz Buzz t Fizz l e FizzBuzz a m Fizz L Buzz Fizz t l Fizz Buzz a Fizz b !";
         FizzBuzzObject expectedObject = new FizzBuzzObject(result, 13);
         Assertions.assertEquals(expectedObject, FizzBuzzDetector.getOverlappings(string));
     }

@@ -7,7 +7,7 @@ public class NumberFormatterTest {
     @Test
     public void testParseInt1() {
         //actual result
-        String string1 = "+0";
+        String string1 = "-0";
         //expected result
         int result1 = 0;
         Assertions.assertEquals(result1, NumberFormatter.parseInt(string1));
