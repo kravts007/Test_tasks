@@ -20,7 +20,7 @@ public class NumberFormatter {
             }                                           // and add the new number in the end
             i++;
         }
-        if (isNeg) {    // If flag isNeg is true, the intValue becomes negative
+        if (isNeg) {   // If flag isNeg is true, the intValue becomes negative
             value *= -1;     // by multiplying by -1
         }
         return value;

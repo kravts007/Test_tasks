@@ -3,6 +3,7 @@ Implement logic that translates stringified integer value into numeric format.
 
 Sample: “123345” -> 123345, “-123345” -> -123345, “+1” -> 1
 
+
 Constraints:
 empty string is not applicable
 Length of the input string: 2 ≤ |s| ≤ 2^31-1
