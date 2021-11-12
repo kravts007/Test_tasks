@@ -5,7 +5,7 @@ package Task_2;
 public class FizzBuzzDetector {
     public static Object getOverlappings(String string) {
         validateString(string);
-        String[] words = string.split(" ");     // Split the string into an array
+        String[] words = string.split(" ");    // Split the string into an array
         StringBuilder builder = new StringBuilder();    // Create new StringBuilder which will contains our new string with Fizz and Buzz
         int counter = 0;
         boolean endOfTheLine;

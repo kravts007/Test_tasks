@@ -10,6 +10,7 @@ public class FizzBuzzObject {
         this.string = string;
         this.count = count;
     }
+
     @Override
     public String toString() {
         return "output string: \n" + string + "\n" +
